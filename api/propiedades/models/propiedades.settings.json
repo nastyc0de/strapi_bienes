@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "propiedades",
+  "info": {
+    "name": "Propiedades"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "habitaciones": {
+      "type": "integer",
+      "required": true
+    },
+    "estacionamiento": {
+      "type": "integer",
+      "required": true
+    },
+    "wc": {
+      "type": "integer"
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": true
+    },
+    "imagen": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "categoria": {
+      "model": "categoria"
+    },
+    "agente": {
+      "model": "agentes"
+    }
+  }
+}
